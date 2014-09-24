@@ -24,7 +24,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1',]
+ALLOWED_HOSTS = ['127.0.0.1',]  #Heroku app_name=kimathi_hostels.herokuapp.com
 
 
 # Application definition
@@ -40,7 +40,6 @@ INSTALLED_APPS = (
     'south',
     'easy_thumbnails',
     'rest_framework',
-    'dj-database-url', 
     'hostels',
 )
 
@@ -90,7 +89,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
 STATIC_ROOT = '/static/'
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'hostels/uploads')
 
 STATIR_DIRS =(   
@@ -112,8 +113,15 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.contrib.messages.context_processors.messages",
 )
 
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
+
 POSTGIS_VERSION = (2,1, 2)
 
+#Deployment on Heroku
+'''
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
 DATABASES['default'] =  dj_database_url.config()
@@ -133,3 +141,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+'''

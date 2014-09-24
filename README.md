@@ -28,5 +28,3 @@ Used Technologies:
 </ul>
 				    
 All project dependencies can be found in <em>requirements.txt</em>
-
-You can find more explanation about this simple app on my <a href="http://www.ipasic.com/article/query-and-filter-leaflet-map-layers/">blog post</a>.
